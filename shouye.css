@@ -1,0 +1,113 @@
+/* shouye.css - 紫罗兰永恒花园样式 */
+
+/* 页面基础样式 */
+body {
+    background-image: url("Saved Pictures/44.jpg"); /* 背景图路径 */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #333;
+}
+
+/* 导航栏优化（和登录页统一风格） */
+nav {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0e0f8;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 40px;
+}
+
+nav a {
+    font-size: 18px;
+    padding: 0 25px;
+    text-decoration: none;
+    color: #7a1faa;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #952ad3;
+}
+
+/* 页面主容器（居中+宽度控制） */
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 标题区域（和背景区分开） */
+.title-banner {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #7a1faa;
+}
+
+.title-banner h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.title-banner p {
+    font-size: 16px;
+    font-style: italic;
+    color: #952ad3;
+}
+
+/* 内容卡片 */
+.content-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(149, 42, 211, 0.08);
+    border: 1px solid #f8f0fc;
+    margin-bottom: 40px;
+}
+
+/* 作者信息区域 */
+.author-info {
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: #6a6599;
+}
+
+.author-info h2 {
+    font-size: 22px;
+    color: #7a1faa;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f0e0f8;
+    padding-bottom: 8px;
+}
+
+.author-info p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* 视频区域（居中+宽度控制） */
+.video-wrap {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.video-wrap video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    border: 3px solid #f0e0f8;
+}
+
+/* 页脚（版权信息居中+样式） */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    color: #6a6599;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-top: 1px solid #f0e0f8;
+}

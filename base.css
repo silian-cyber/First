@@ -1,0 +1,39 @@
+/* base.css 基础样式 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+nav {
+    text-align: center;
+    padding: 15px 20px;
+    border-bottom: 1px dotted #c076e2;
+    margin-bottom: 30px;
+}
+
+nav a {
+    font-size: 20px;
+    padding: 0 30px;
+    text-decoration: none;
+    color: rgb(76, 87, 233);
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #952ad3;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    line-height: 60px;
+    margin-top: 50px;
+    border-top: 1px dotted #c076e2;
+    color: #666;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.8);
+}

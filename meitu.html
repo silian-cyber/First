@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美图欣赏 - 紫罗兰永恒花园</title> <!-- 修正标题 -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="meitu.css">
+    <style>
+        .img2 {			
+            animation: frmCD 2s linear 0.2s infinite;
+        }
+        .img2:hover {
+            animation-play-state: paused;
+        }
+        @keyframes frmCD{
+            0% { opacity: 1; } 
+            30% { opacity: 0.5; transform: rotate(175deg) scale(0.8); } 
+            60% { opacity: 1; transform: rotate(350deg) scale(1); }
+            100% { opacity: 1; transform: rotate(360deg) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- 统一导航栏 -->
+    <nav>
+        <a href="shouye.html">首页</a>
+        <a href="juqing.html">剧情简介</a>
+        <a href="renwu.html">主要人物</a>
+        <a href="meitu.html">美图欣赏</a>
+        <a href="login.html">注册</a>
+        <a href="register.html">登录</a>
+    </nav>
+
+    <div id="ziluolan">
+        <img src="Saved Pictures\11.jpg" class="img1" alt="紫罗兰壁纸1">
+        <img src="Saved Pictures\22.jpg" class="img2" id="img2" alt="紫罗兰壁纸2"> <!-- 新增id -->
+        <img src="Saved Pictures\33.jpg" class="img3" alt="紫罗兰壁纸3"> 
+        <img src="Saved Pictures\44.jpg" class="img4" alt="紫罗兰壁纸4">
+        <img src="Saved Pictures\55.jpg" class="img5" alt="紫罗兰壁纸5">
+    </div>
+
+    <script>
+        //获取正确元素并简化逻辑
+        const img2 = document.getElementById("img2");
+        img2.onmouseover = () => { img2.style.animationPlayState = "paused"; };
+        img2.onmouseout = () => { img2.style.animationPlayState = "running"; };
+    </script>
+
+    <footer>
+        <p>© 2024 紫罗兰永恒花园主题站 | 版权所有</p>
+    </footer>
+</body>
+</html>

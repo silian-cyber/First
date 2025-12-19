@@ -1,0 +1,110 @@
+/* register.css - 紫罗兰永恒花园首页专属样式 */
+
+/* 全局居中容器 */
+.container {
+    min-height: calc(100vh - 150px); /* 扣除导航+页脚高度，垂直居中 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
+    padding: 20px 0;
+}
+
+body {
+    background-image: url("Saved Pictures/44.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.tb {
+    width: 500px;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(149, 42, 211, 0.15);
+}
+
+.tb caption {
+    font-size: 26px;
+    color: #952ad3;
+    margin-bottom: 15px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.tb td {
+    border: 1px solid #f0e0f8;
+    padding: 12px 15px;
+    color: #6a6599;
+}
+
+/* 左侧标签列 */
+.tb td:first-child {
+    text-align: right;
+    width: 100px;
+    background-color: #fef9ff;
+    font-weight: 500;
+}
+
+/* 输入框样式 */
+.tb input[type="text"],
+.tb input[type="password"],
+.tb input[type="tel"] {
+    width: 280px;
+    padding: 9px 12px;
+    border: 1px solid #e0c8f0;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.tb input:focus {
+    border-color: #952ad3;
+    box-shadow: 0 0 0 2px rgba(149, 42, 211, 0.1);
+}
+
+/* 按钮行 */
+.btn-tr {
+    text-align: center;
+    border: none !important;
+    background-color: #fef9ff;
+    padding: 20px 0 !important;
+}
+
+.tb input[type="submit"] {
+    background-color: #952ad3;
+    color: white;
+    border: none;
+    padding: 11px 35px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.tb input[type="submit"]:hover {
+    background-color: #7a1faa;
+    transform: translateY(-1px);
+}
+
+/* 注册引导行 */
+.reg-tr {
+    text-align: center;
+    border: none !important;
+    padding: 10px 0 20px !important;
+    color: #6a6599;
+    font-size: 14px;
+}
+
+.reg-tr a {
+    color: #952ad3;
+    text-decoration: none;
+}
+
+.reg-tr a:hover {
+    text-decoration: underline;
+}

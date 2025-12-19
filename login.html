@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - 紫罗兰永恒花园</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="login_register.css">
+</head>
+<body>
+    <nav>
+        <a href="shouye.html">首页</a>
+        <a href="juqing.html">剧情简介</a>
+        <a href="renwu.html">主要人物</a>
+        <a href="meitu.html">美图欣赏</a>
+        <a href="login.html">注册</a>
+        <a href="register.html">登录</a>
+    </nav>
+
+    <div class="form-page-container">
+        <div class="form-card">
+            <h2 class="form-title">注册</h2>
+            <form action="shouye.html" method="get" onsubmit="return validateRegisterForm()">
+                <div class="form-row">
+                    <label class="form-label">用户名</label>
+                    <div class="form-input-wrap">
+                        <input type="text" name="username" id="reg-username" class="form-input" required placeholder="请输入用户名">
+                        <span id="reg-usernameTip" class="tip-text"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="form-label">密&nbsp;&nbsp;码</label>
+                    <div class="form-input-wrap">
+                        <input type="password" name="password" id="reg-password" class="form-input" required placeholder="请输入密码（至少6位）">
+                        <span id="reg-passwordTip" class="tip-text"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="form-label">密码确认</label>
+                    <div class="form-input-wrap">
+                        <input type="password" name="password2" id="reg-password2" class="form-input" required placeholder="请再次输入密码">
+                        <span id="reg-pwd2Tip" class="tip-text"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="form-label">手机号</label>
+                    <div class="form-input-wrap">
+                        <input type="tel" name="phone" id="reg-phone" class="form-input" pattern="^1[3-9]\d{9}$" required placeholder="请输入手机号">
+                        <span id="reg-phoneTip" class="tip-text"></span>
+                    </div>
+                </div>
+
+                <div class="form-btn-group">
+                    <button type="submit" class="submit-btn">注册</button>
+                    <p class="back-link"><a href="shouye.html">返回首页</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 紫罗兰永恒花园主题站 | 版权所有</p>
+    </footer>
+
+    <script>
+        function validateRegisterForm() {
+            // 获取元素
+            const username = document.getElementById('reg-username');
+            const password = document.getElementById('reg-password');
+            const password2 = document.getElementById('reg-password2');
+            const phone = document.getElementById('reg-phone');
+            const usernameTip = document.getElementById('reg-usernameTip');
+            const passwordTip = document.getElementById('reg-passwordTip');
+            const pwd2Tip = document.getElementById('reg-pwd2Tip');
+            const phoneTip = document.getElementById('reg-phoneTip');
+
+            // 重置样式和提示
+            [username, password, password2, phone].forEach(el => {
+                el.classList.remove('error', 'success');
+            });
+            [usernameTip, passwordTip, pwd2Tip, phoneTip].forEach(el => {
+                el.textContent = '';
+            });
+
+            let isValid = true;
+
+            // 用户名验证
+            if (username.value.trim() === '') {
+                usernameTip.textContent = '用户名不能为空';
+                username.classList.add('error');
+                isValid = false;
+            } else if (username.value.length < 2) {
+                usernameTip.textContent = '用户名至少2个字符';
+                username.classList.add('error');
+                isValid = false;
+            } else {
+                username.classList.add('success');
+            }
+
+            // 密码验证
+            if (password.value.trim() === '') {
+                passwordTip.textContent = '密码不能为空';
+                password.classList.add('error');
+                isValid = false;
+            } else if (password.value.length < 6) {
+                passwordTip.textContent = '密码至少6个字符';
+                password.classList.add('error');
+                isValid = false;
+            } else {
+                password.classList.add('success');
+            }
+
+            // 密码确认验证
+            if (password2.value.trim() === '') {
+                pwd2Tip.textContent = '请再次输入密码';
+                password2.classList.add('error');
+                isValid = false;
+            } else if (password2.value !== password.value) {
+                pwd2Tip.textContent = '两次密码输入不一致';
+                password2.classList.add('error');
+                isValid = false;
+            } else {
+                password2.classList.add('success');
+            }
+
+            // 手机号验证
+            const phoneReg = /^1[3-9]\d{9}$/;
+            if (!phoneReg.test(phone.value.trim())) {
+                phoneTip.textContent = '请输入有效的11位手机号';
+                phone.classList.add('error');
+                isValid = false;
+            } else {
+                phone.classList.add('success');
+            }
+
+            return isValid;
+        }
+
+        // 实时输入验证
+        document.getElementById('reg-username').addEventListener('input', function() {
+            const tip = document.getElementById('reg-usernameTip');
+            if (this.value.length < 2 && this.value.trim() !== '') {
+                tip.textContent = '用户名至少2个字符';
+                this.classList.add('error');
+            } else if (this.value.trim() === '') {
+                tip.textContent = '用户名不能为空';
+                this.classList.add('error');
+            } else {
+                tip.textContent = '';
+                this.classList.add('success');
+            }
+        });
+
+        document.getElementById('reg-password').addEventListener('input', function() {
+            const tip = document.getElementById('reg-passwordTip');
+            if (this.value.length < 6 && this.value.trim() !== '') {
+                tip.textContent = '密码至少6个字符';
+                this.classList.add('error');
+            } else if (this.value.trim() === '') {
+                tip.textContent = '密码不能为空';
+                this.classList.add('error');
+            } else {
+                tip.textContent = '';
+                this.classList.add('success');
+            }
+        });
+
+        document.getElementById('reg-password2').addEventListener('input', function() {
+            const tip = document.getElementById('reg-pwd2Tip');
+            const pwd = document.getElementById('reg-password').value;
+            if (this.value !== pwd && this.value.trim() !== '') {
+                tip.textContent = '两次密码输入不一致';
+                this.classList.add('error');
+            } else if (this.value.trim() === '') {
+                tip.textContent = '请再次输入密码';
+                this.classList.add('error');
+            } else {
+                tip.textContent = '';
+                this.classList.add('success');
+            }
+        });
+
+        document.getElementById('reg-phone').addEventListener('input', function() {
+            const tip = document.getElementById('reg-phoneTip');
+            const reg = /^1[3-9]\d{9}$/;
+            if (!reg.test(this.value) && this.value.trim() !== '') {
+                tip.textContent = '请输入有效的11位手机号';
+                this.classList.add('error');
+            } else if (this.value.trim() === '') {
+                tip.textContent = '手机号不能为空';
+                this.classList.add('error');
+            } else {
+                tip.textContent = '';
+                this.classList.add('success');
+            }
+        });
+    </script>
+</body>
+</html>

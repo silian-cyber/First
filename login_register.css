@@ -1,0 +1,187 @@
+/* login_register.css - 登录/注册页专属样式 */
+
+/* 页面基础样式 */
+body {
+    background-image: url("Saved Pictures/44.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* 导航栏（首页风格） */
+nav {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0e0f8;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 40px;
+}
+
+nav a {
+    font-size: 18px;
+    padding: 0 25px;
+    text-decoration: none;
+    color: #7a1faa;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #952ad3;
+}
+
+/* 表单容器（居中+宽度控制） */
+.form-page-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 表单卡片 */
+.form-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 40px 30px; /* 增大内边距，避免内容贴边 */
+    box-shadow: 0 6px 20px rgba(149, 42, 211, 0.08);
+    border: 1px solid #f8f0fc;
+    margin-bottom: 40px;
+}
+
+/* 表单标题 */
+.form-title {
+    text-align: center;
+    font-size: 28px;
+    color: #7a1faa;
+    margin-bottom: 35px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* 表单行（优化间距） */
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px; /* 增大行间距 */
+}
+
+/* 标签列 */
+.form-label {
+    width: 100px;
+    text-align: right;
+    padding-right: 15px;
+    font-size: 16px;
+    color: #6a6599;
+    font-weight: 500;
+}
+
+/* 输入列 */
+.form-input-wrap {
+    flex: 1;
+    position: relative;
+}
+
+/* 输入框样式 */
+.form-input {
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+    border: 1px solid #e0c8f0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: #c0a8cc;
+}
+
+.form-input:focus {
+    border-color: #952ad3;
+    box-shadow: 0 0 0 3px rgba(149, 42, 211, 0.1);
+}
+
+/* 提示文字 */
+.tip-text {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 5px);
+    font-size: 12px;
+    color: #e63946;
+    line-height: 1.2;
+    padding: 2px 6px;
+    background-color: #fff5f5;
+    border-radius: 4px;
+    border-left: 2px solid #e63946;
+}
+
+/* 输入框错误状态 */
+.form-input.error {
+    border-color: #e63946;
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+}
+
+/* 输入框成功状态（可选） */
+.form-input.success {
+    border-color: #45b798;
+    box-shadow: 0 0 0 3px rgba(69, 183, 152, 0.1);
+}
+
+/* 按钮区域（居中+增加内边距） */
+.form-btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    padding: 0 20px; /* 左右留白，避免贴边 */
+}
+
+/* 提交按钮 */
+.submit-btn {
+    width: 200px;
+    height: 48px;
+    background-color: #952ad3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px; /* 增大按钮与链接的间距 */
+}
+
+.submit-btn:hover {
+    background-color: #7a1faa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(149, 42, 211, 0.2);
+}
+
+/* 注册引导链接 */
+.reg-link {
+    font-size: 14px;
+    color: #6a6599;
+    text-align: center;
+}
+
+.reg-link a {
+    color: #7a1faa;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.reg-link a:hover {
+    text-decoration: underline;
+}
+
+/* 页脚 */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    color: #6a6599;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-top: 1px solid #f0e0f8;
+}

@@ -1,0 +1,36 @@
+/* juqing.css - 紫罗兰永恒花园样式 */
+
+h2 {
+    font-size: 25px;
+    margin: 30px 40px;
+    text-align: center;
+    color: #7973b1;
+    border-bottom: 1px solid #7973b1;
+    padding-bottom: 10px;
+}
+
+p {
+    border: 1px solid #fff;
+    color: #7973b1;
+    margin: 20px auto;
+    width: 90%; /* 适配不同屏幕 */
+    padding: 20px;
+    line-height: 1.8; /* 优化行高 */
+}
+
+.img-group {
+    text-align: center; /* 图片居中 */
+    margin: 20px 0;
+}
+
+img {
+    width: 40%; /* 调整图片宽度 */
+    margin: 10px 2%;
+    border-radius: 20px;
+    border: 5px solid #7973b1;
+    transition: all 3s ease-out; /* 统一过渡效果 */
+}
+
+img:hover {
+    border-radius: 80px;
+}

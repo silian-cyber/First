@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 紫罗兰永恒花园</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="login_register.css">
+</head>
+<body>
+    <nav>
+        <a href="shouye.html">首页</a>
+        <a href="juqing.html">剧情简介</a>
+        <a href="renwu.html">主要人物</a>
+        <a href="meitu.html">美图欣赏</a>
+        <a href="login.html">注册</a>
+        <a href="register.html">登录</a>
+    </nav>
+
+    <div class="form-page-container">
+        <div class="form-card">
+            <h2 class="form-title">登录</h2>
+            <form action="shouye.html" method="get" onsubmit="return validateLoginForm()">
+                <!-- 用户名行 -->
+                <div class="form-row">
+                    <label class="form-label">用户名</label>
+                    <div class="form-input-wrap">
+                        <input type="text" name="username" id="login-username" class="form-input" required autofocus placeholder="请输入用户名">
+                        <span id="usernameTip" class="tip-text"></span>
+                    </div>
+                </div>
+
+                <!-- 密码行 -->
+                <div class="form-row">
+                    <label class="form-label">密&nbsp;&nbsp;码</label>
+                    <div class="form-input-wrap">
+                        <input type="password" name="password" id="login-password" class="form-input" required placeholder="请输入密码（至少6位）">
+                        <span id="passwordTip" class="tip-text"></span>
+                    </div>
+                </div>
+
+                <!-- 手机号行 -->
+                <div class="form-row">
+                    <label class="form-label">手机号</label>
+                    <div class="form-input-wrap">
+                        <input type="tel" name="phone" id="login-phone" class="form-input" pattern="^1[3-9]\d{9}$" required placeholder="请输入手机号">
+                        <span id="phoneTip" class="tip-text"></span>
+                    </div>
+                </div>
+
+                <div class="form-btn-group">
+                    <button type="submit" class="submit-btn">登录</button>
+                    <p class="reg-link">没有账号？<a href="login.html">点击注册</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 紫罗兰永恒花园主题站 | 版权所有</p>
+    </footer>
+
+    <script>
+        // 登录表单验证函数
+        function validateLoginForm() {
+            // 获取输入框和提示元素
+            const username = document.getElementById('login-username');
+            const password = document.getElementById('login-password');
+            const phone = document.getElementById('login-phone');
+            const usernameTip = document.getElementById('usernameTip');
+            const passwordTip = document.getElementById('passwordTip');
+            const phoneTip = document.getElementById('phoneTip');
+            
+            // 重置所有提示和样式
+            [username, password, phone].forEach(el => {
+                el.classList.remove('error', 'success');
+            });
+            [usernameTip, passwordTip, phoneTip].forEach(el => {
+                el.textContent = '';
+            });
+
+            let isValid = true;
+
+            // 用户名验证（非空+至少2位）
+            if (username.value.trim() === '') {
+                usernameTip.textContent = '用户名不能为空';
+                username.classList.add('error');
+                isValid = false;
+            } else if (username.value.length < 2) {
+                usernameTip.textContent = '用户名至少2个字符';
+                username.classList.add('error');
+                isValid = false;
+            } else {
+                username.classList.add('success');
+            }
+
+            // 密码验证（非空+至少6位）
+            if (password.value.trim() === '') {
+                passwordTip.textContent = '密码不能为空';
+                password.classList.add('error');
+                isValid = false;
+            } else if (password.value.length < 6) {
+                passwordTip.textContent = '密码至少6个字符';
+                password.classList.add('error');
+                isValid = false;
+            } else {
+                password.classList.add('success');
+            }
+
+            // 手机号验证（格式）
+            const phoneReg = /^1[3-9]\d{9}$/;
+            if (!phoneReg.test(phone.value.trim())) {
+                phoneTip.textContent = '请输入有效的11位手机号';
+                phone.classList.add('error');
+                isValid = false;
+            } else {
+                phone.classList.add('success');
+            }
+
+            return isValid; // 验证通过才提交表单
+        }
+
+        // 实时输入验证（可选，提升体验）
+        document.getElementById('login-username').addEventListener('input', function() {
+            const tip = document.getElementById('usernameTip');
+            if (this.value.length < 2 && this.value.trim() !== '') {
+                tip.textContent = '用户名至少2个字符';
+                this.classList.add('error');
+            } else if (this.value.trim() === '') {
+                tip.textContent = '用户名不能为空';
+                this.classList.add('error');
+            } else {
+                tip.textContent = '';
+                this.classList.add('success');
+            }
+        });
+
+        document.getElementById('login-password').addEventListener('input', function() {
+            const tip = document.getElementById('passwordTip');
+            if (this.value.length < 6 && this.value.trim() !== '') {
+                tip.textContent = '密码至少6个字符';
+                this.classList.add('error');
+            } else if (this.value.trim() === '') {
+                tip.textContent = '密码不能为空';
+                this.classList.add('error');
+            } else {
+                tip.textContent = '';
+                this.classList.add('success');
+            }
+        });
+
+        document.getElementById('login-phone').addEventListener('input', function() {
+            const tip = document.getElementById('phoneTip');
+            const reg = /^1[3-9]\d{9}$/;
+            if (!reg.test(this.value) && this.value.trim() !== '') {
+                tip.textContent = '请输入有效的11位手机号';
+                this.classList.add('error');
+            } else if (this.value.trim() === '') {
+                tip.textContent = '手机号不能为空';
+                this.classList.add('error');
+            } else {
+                tip.textContent = '';
+                this.classList.add('success');
+            }
+        });
+    </script>
+</body>
+</html>

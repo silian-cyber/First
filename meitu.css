@@ -1,0 +1,80 @@
+ /* meitu.css - 紫罗兰永恒花园样式 */
+ 
+ img{
+    width:                      10%;
+    padding:                    10px;           
+    display:                    inline-block;           /*转换为行内块元素*/
+    margin-bottom:              20px;                   /*外边距*/
+}
+
+body {
+    background-image:   url("Saved Pictures/44.jpg");    /*插入背景图片*/
+    background-repeat:  no-repeat;                       /*图片不重复*/
+    background-size:    cover;                           /*覆盖*/
+}
+
+.img1{
+    opacity:                    1;                      /*透明度：完全不透*/
+}
+
+.img1:hover {							                /*鼠标悬停时*/
+    transform:                  scale(2);				/*缩放变形*/
+    transform-origin:           50% 0%;			        /*变形中心由50%改为0%，即由中心改为左上角*/
+    transition:                 transform 1s;			/*2秒过渡*/
+}
+
+.img3:hover {                                           /*鼠标悬停时*/
+    background:                 thistle;    
+    opacity:                    1.5;                    
+    transition-property:        all;                    /*参与过渡的属性*/
+    transition-duration:        1s;                     /*过渡的持续时间：1s*/
+}
+
+.img4 {
+    opacity:                    1.5;
+    animation-name:             f4;                     /*动画名称*/
+    -webkit-animation-name:     f4;                     /**/
+    animation-duration:         5s;                     /*持续时长*/
+    -webkit-animation-duration: 5s;
+    animation-iteration-count:  5;                      /*循环次数：5*/
+}
+
+.img4:hover {
+    transform:                  translate(300px,0) rotate(180deg) scale(0);         /*向x轴移动300px，旋转180，放大0*/
+    transition-property:        transform;             /*参与过渡的属性：所有*/
+    transition-duration:        1s;                    /*过渡的持续时间：1s*/
+    transition-timing-function: ease;                  /*过渡类型：默认低速-高速后变慢*/
+    transition-delay:           1s;
+}
+
+.img5:hover {
+    animation-name:             f5;
+    -webkit-animation-name:     f5;
+    animation-duration:         5s;
+    -webkit-animation-duration: 5s;
+    animation-iteration-count:   5;                     /*循环次数：5*/
+}
+
+@keyframes f4 {
+    0% {
+        background:thistle; width: 20%;
+    }
+    40% {
+        width: 40%; opacity: 1; transform: scale(0.5);
+    }
+    100% {
+        background:violet; width: 20%;
+    }
+}
+
+@keyframes f5 {
+    0%{
+        width: 20%; opacity: 0;
+    }
+    50%{
+        width: 30%; opacity: 1; transform: rotate(-45deg);
+    }
+    100%{
+        width: 20%; opacity: 0;
+    }
+}
