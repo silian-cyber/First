@@ -1,4 +1,4 @@
-/* shouye.css - 紫罗兰永恒花园样式 */
+/* index.css - 紫罗兰永恒花园样式 */
 
 /* 页面基础样式 */
 body {
@@ -110,4 +110,5 @@ footer {
     font-size: 14px;
     background-color: rgba(255, 255, 255, 0.85);
     border-top: 1px solid #f0e0f8;
+
 }
