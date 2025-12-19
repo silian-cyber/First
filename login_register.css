@@ -2,7 +2,7 @@
 
 /* 页面基础样式 */
 body {
-    background-image: url("Saved Pictures/44.jpg");
+    background-image: url("Pictures/44.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -184,4 +184,5 @@ footer {
     font-size: 14px;
     background-color: rgba(255, 255, 255, 0.85);
     border-top: 1px solid #f0e0f8;
+
 }
