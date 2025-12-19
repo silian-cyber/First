@@ -10,7 +10,7 @@
 }
 
 body {
-    background-image: url("Saved Pictures/44.jpg");
+    background-image: url("Pictures/44.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -108,3 +108,4 @@ body {
 .reg-tr a:hover {
     text-decoration: underline;
 }
+
