@@ -8,7 +8,7 @@
 }
 
 body {
-    background-image:   url("Saved Pictures/44.jpg");    /*插入背景图片*/
+    background-image:   url("Pictures/44.jpg");          /*插入背景图片*/
     background-repeat:  no-repeat;                       /*图片不重复*/
     background-size:    cover;                           /*覆盖*/
 }
@@ -17,10 +17,10 @@ body {
     opacity:                    1;                      /*透明度：完全不透*/
 }
 
-.img1:hover {							                /*鼠标悬停时*/
-    transform:                  scale(2);				/*缩放变形*/
-    transform-origin:           50% 0%;			        /*变形中心由50%改为0%，即由中心改为左上角*/
-    transition:                 transform 1s;			/*2秒过渡*/
+.img1:hover {							                                   /*鼠标悬停时*/
+    transform:                  scale(2);				          /*缩放变形*/
+    transform-origin:           50% 0%;			             /*变形中心由50%改为0%，即由中心改为左上角*/
+    transition:                 transform 1s;			       /*2秒过渡*/
 }
 
 .img3:hover {                                           /*鼠标悬停时*/
@@ -77,4 +77,5 @@ body {
     100%{
         width: 20%; opacity: 0;
     }
+
 }
