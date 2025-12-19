@@ -2,7 +2,7 @@
 
 /* 页面基础样式 */
 body {
-    background-image: url("Saved Pictures/44.jpg"); /* 背景图路径 */
+    background-image: url("Pictures/44.jpg"); /* 背景图路径 */
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -112,3 +112,4 @@ footer {
     border-top: 1px solid #f0e0f8;
 
 }
+
